@@ -59,12 +59,12 @@ function Projects() {
 
           <Col md={4} className="project-card">
             <ProjectCard
-              imgPath={gmail_inbox_cleaner}
+              imgPath={lemonade}
               isBlog={false}
-              title="Gmail Inbox Cleaner"
-              description="A Node.js application that helps clean up your Gmail inbox by automatically processing unread emails containing 'unsubscribe' links. It uses the Gmail API to access your inbox and the Natural Language Processing API to process the emails."
-              ghLink="https://github.com/Dave-Vermeulen/gmail-inbox-cleaner"
-              //demoLink="https://plant49-ai.herokuapp.com/"
+              title="Lemonade 🍋"
+              description="A blog about my journey. Demystifying the the world of ADHD, Islam, and Tech. Built using the most enjoyable language, Clojure 🫶🏾"
+              ghLink="https://github.com/Dave-Vermeulen/Lemonade"
+              //demoLink="https://www.fabfeet.run.place"
             />
           </Col>
 
@@ -78,16 +78,16 @@ function Projects() {
               //demoLink="https://sureco.co.za/"
             />
           </Col>
-
           <Col md={4} className="project-card">
             <ProjectCard
-              imgPath={lemonade}
+              imgPath={gmail_inbox_cleaner}
               isBlog={false}
-              title="Lemonade 🍋"
-              description="A blog about my journey. Demystifying the the world of ADHD, Islam, and Tech. Built using the most enjoyable language, Clojure 🫶🏾"
-              ghLink="https://github.com/Dave-Vermeulen/Lemonade"
-              //demoLink="https://www.fabfeet.run.place"
+              title="Gmail Inbox Cleaner"
+              description="A Node.js application that helps clean up your Gmail inbox by automatically processing unread emails containing 'unsubscribe' links. It uses the Gmail API to access your inbox and the Natural Language Processing API to process the emails."
+              ghLink="https://github.com/Dave-Vermeulen/gmail-inbox-cleaner"
+              //demoLink="https://plant49-ai.herokuapp.com/"
             />
+          
           </Col>
         </Row>
       </Container>
