@@ -4,7 +4,9 @@ import ProjectCard from "./ProjectCards";
 import Particle from "../Particle";
 import notesApp from "../../Assets/Projects/notesApp.png";
 import emotion from "../../Assets/Projects/emotion.png";
+import lemonade from "../../Assets/Projects/lemonade.png";
 import justForToday from "../../Assets/Projects/justForToday.png";
+import QA_testing from "../../Assets/Projects/QA_testing.png";
 import editor from "../../Assets/Projects/codeEditor.png";
 import gmail_inbox_cleaner from "../../Assets/Projects/gmail_inbox_cleaner.png";
 import suicide from "../../Assets/Projects/suicide.png";
@@ -38,7 +40,7 @@ function Projects() {
               imgPath={notesApp}
               isBlog={false}
               title="Notes App"
-              description="A minimalistic notes app built using React, Tailwind CSS, and Firebase."
+              description="A minimalistic notes app built using React and Tailwind CSS. It allows users to create, read, update, and delete notes. The app uses local storage to persist the notes."
               ghLink="https://github.com/Dave-Vermeulen/Notes-App"
               //demoLink="https://quicknotes.run.place"
             />
@@ -68,23 +70,23 @@ function Projects() {
 
           <Col md={4} className="project-card">
             <ProjectCard
-              imgPath={suicide}
+              imgPath={QA_testing}
               isBlog={false}
-              title="Sureco Trading"
-              description="This is a one-page website build for SURECO, using JavaScript, HTML, and CSS. The website will be deployed on the purchased domain (sureco.co.za) with existing email accounts and hosting. This is project I took on early in my journey, I come from a business facing background so making promises to hook the client comes easy for me. The story goes something like: A man walks into a mosque and tells the Sheikh he needs a way to increase his business, the young brother responds 'you have found him'."
+              title="Noobs Guide to QA Testing"
+              description="This is guide to learn quality assurance testing manually with TestRail and automation testing with Jest. Theres a ExrepessJS server with API endpoints to test."
               ghLink="https://github.com/Dave-Vermeulen/sureco.co.za"
-              demoLink="https://sureco.co.za/"
+              //demoLink="https://sureco.co.za/"
             />
           </Col>
 
           <Col md={4} className="project-card">
             <ProjectCard
-              imgPath={emotion}
+              imgPath={lemonade}
               isBlog={false}
-              title="Fab Feet"
-              description="This is a ReactJS based startup and small business website template. It was designed using TailwindCSS and React. The Contact form was made functional using EmailJS. FabFeet is a foot specialist disrupting the scene with the economic prices for specialized podiatry care"
-              ghLink="https://github.com/Dave-Vermeulen/fabfeet"
-              demoLink="https://www.fabfeet.run.place"
+              title="Lemonade 🍋"
+              description="A blog about my journey. Demystifying the the world of ADHD, Islam, and Tech. Built using the most enjoyable language, Clojure 🫶🏾"
+              ghLink="https://github.com/Dave-Vermeulen/Lemonade"
+              //demoLink="https://www.fabfeet.run.place"
             />
           </Col>
         </Row>
