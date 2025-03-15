@@ -9,7 +9,7 @@ import justForToday from "../../Assets/Projects/justForToday.png";
 import QA_testing from "../../Assets/Projects/QA_testing.png";
 import editor from "../../Assets/Projects/codeEditor.png";
 import gmail_inbox_cleaner from "../../Assets/Projects/gmail_inbox_cleaner.png";
-import suicide from "../../Assets/Projects/suicide.png";
+import prayerTimes from "../../Assets/Projects/prayerTimes.png";
 import bitsOfCode from "../../Assets/Projects/blog.png";
 
 function Projects() {
@@ -24,16 +24,16 @@ function Projects() {
           Here are a few projects I've worked on recently.
         </p>
         <Row style={{ justifyContent: "center", paddingBottom: "10px" }}>
-          {/* <Col md={4} className="project-card">
+          { <Col md={4} className="project-card">
             <ProjectCard
-              imgPath={chatify}
+              imgPath={prayerTimes}
               isBlog={false}
-              title="Chatify"
-              description="Personal Chat Room or Workspace to share resources and hangout with friends build with react.js, Material-UI, and Firebase. Have features which allows user for realtime messaging, image sharing as well as supports reactions on messages."
-              ghLink="https://github.com/soumyajit4419/Chatify"
-              demoLink="https://chatify-49.web.app/"
+              title="Islamic Prayer Times"
+              description="A sunset-colored dashboard delivering accurate Islamic prayer times for Cape Town, South Africa - updated daily via API magic. Real-time Aladhan API integration. Auto-refreshing times. Prophet's ﷺ dua with Arabic/English display. Pure Clojure no dependencies, no problems"
+              ghLink="https://github.com/Dave-Vermeulen/Prayer-Times"
+              demoLink="https://solaahtimes.vercel.app/"
             />
-          </Col> */}
+          </Col> }
 
           <Col md={4} className="project-card">
             <ProjectCard
