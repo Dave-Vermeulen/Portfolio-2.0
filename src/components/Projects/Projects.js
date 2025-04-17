@@ -10,6 +10,7 @@ import QA_testing from "../../Assets/Projects/QA_testing.png";
 import editor from "../../Assets/Projects/codeEditor.png";
 import gmail_inbox_cleaner from "../../Assets/Projects/gmail_inbox_cleaner.png";
 import prayerTimes from "../../Assets/Projects/prayerTimes.png";
+import OpenMosque from "../../Assets/Projects/OpenMosque.png";
 import bitsOfCode from "../../Assets/Projects/blog.png";
 
 function Projects() {
@@ -86,6 +87,17 @@ function Projects() {
               description="A Node.js application that helps clean up your Gmail inbox by automatically processing unread emails containing 'unsubscribe' links. It uses the Gmail API to access your inbox and the Natural Language Processing API to process the emails."
               ghLink="https://github.com/Dave-Vermeulen/gmail-inbox-cleaner"
               //demoLink="https://plant49-ai.herokuapp.com/"
+            />
+          
+          </Col>
+          <Col md={4} className="project-card">
+            <ProjectCard
+              imgPath={OpenMosque}
+              isBlog={false}
+              title="The Open Mosque"
+              description="Wordpress site for the Mosque that has been inherited. In discussions with stakeholders to build a new site with a bit more bang!"
+              //ghLink="https://github.com/Dave-Vermeulen/gmail-inbox-cleaner"
+              demoLink="https://theopenmosque.org.za/"
             />
           
           </Col>
