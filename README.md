@@ -1,6 +1,6 @@
 <h2 align="center">
   Portfolio Website - v2.0<br/>
-  <a href="https://dawudvermeulen.vercel.app/" target="_blank">dawudvermeulen.tech</a>
+  <a href="https://dawudvermeulen.vercel.app/" target="_blank">DawudVermeulen</a>
 </h2>
 <div align="center">
   <img alt="Demo" src="./Images/readme-img1.png" />

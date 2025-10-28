@@ -51,9 +51,9 @@ function Projects() {
             <ProjectCard
               imgPath={justForToday}
               isBlog={false}
-              title="Just For Today"
-              description="JustForToday is a revolutionary productivity app designed specifically for individuals with ADHD. We understand the challenges of managing tasks, staying focused, and maintaining a healthy routine."
-              ghLink="https://github.com/Dave-Vermeulen/Just_For_Today"
+              title="StepWork"
+              description="StepWork is a 12 Step inspired app designed specifically for individuals from the rooms. We understand the challenges of managing step work, doing it bit by bit, and maintaining a healthy routine."
+              ghLink="https://github.com/Dave-Vermeulen/StepWork"
               //demoLink="https://www.justfortoday.work.gd"              
             />
           </Col>
@@ -62,10 +62,10 @@ function Projects() {
             <ProjectCard
               imgPath={lemonade}
               isBlog={false}
-              title="Lemonade 🍋"
+              title="Normally 🍋"
               description="A blog about my journey. Demystifying the the world of ADHD, Islam, and Tech. Built using the most enjoyable language, Clojure 🫶🏾"
               ghLink="https://github.com/Dave-Vermeulen/Lemonade"
-              //demoLink="https://www.fabfeet.run.place"
+              demoLink="https://equalsto.me/"
             />
           </Col>
 
@@ -75,7 +75,7 @@ function Projects() {
               isBlog={false}
               title="Noobs Guide to QA Testing"
               description="This is guide to learn quality assurance testing manually with TestRail and automation testing with Jest. Theres a ExrepessJS server with API endpoints to test."
-              ghLink="https://github.com/Dave-Vermeulen/sureco.co.za"
+              ghLink="https://github.com/Dave-Vermeulen/QA-Testing"
               //demoLink="https://sureco.co.za/"
             />
           </Col>
@@ -83,9 +83,9 @@ function Projects() {
             <ProjectCard
               imgPath={gmail_inbox_cleaner}
               isBlog={false}
-              title="Gmail Inbox Cleaner"
-              description="A Node.js application that helps clean up your Gmail inbox by automatically processing unread emails containing 'unsubscribe' links. It uses the Gmail API to access your inbox and the Natural Language Processing API to process the emails."
-              ghLink="https://github.com/Dave-Vermeulen/gmail-inbox-cleaner"
+              title="Chatbot"
+              description="A chatbot built with Python, FlaskAPI, and the WhatsApp Business API. It responds to user messages with predefined answers and can be extended with more complex functionalities. >> v2 NLU with Dialogflow."
+              ghLink="https://gitlab.com/noortech/WhatsApp_Chatbot"
               //demoLink="https://plant49-ai.herokuapp.com/"
             />
           
@@ -95,7 +95,7 @@ function Projects() {
               imgPath={OpenMosque}
               isBlog={false}
               title="The Open Mosque"
-              description="Wordpress site for the Mosque that has been inherited. In discussions with stakeholders to build a new site with a bit more bang!"
+              description="Wordpress site for the Mosque that has been inherited. We are in discussions with stakeholders to build a new site with a bit more bang!"
               //ghLink="https://github.com/Dave-Vermeulen/gmail-inbox-cleaner"
               demoLink="https://theopenmosque.org.za/"
             />
