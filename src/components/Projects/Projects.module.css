@@ -1,0 +1,123 @@
+.section {
+  padding: 7rem 1.5rem 3rem;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.heading {
+  font-size: clamp(1.8rem, 3.5vw, 2.4rem);
+  text-align: center;
+  margin: 0 0 0.5rem;
+  font-weight: 600;
+}
+
+.accent {
+  color: var(--color-secondary);
+  font-weight: 700;
+}
+
+.intro {
+  text-align: center;
+  color: var(--color-text-muted);
+  margin-bottom: 2rem;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 1.5rem;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  background: var(--color-surface);
+  border: 1px solid var(--color-surface-2);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  transition:
+    transform var(--motion-base),
+    box-shadow var(--motion-base),
+    border-color var(--motion-base);
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-md);
+  border-color: var(--color-primary);
+}
+
+.cardImg {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  background: var(--color-bg);
+}
+
+.cardBody {
+  padding: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  gap: 0.75rem;
+}
+
+.cardTitle {
+  margin: 0;
+  font-size: 1.25rem;
+  color: var(--color-text);
+}
+
+.cardText {
+  margin: 0;
+  flex: 1;
+  color: var(--color-text-muted);
+  line-height: 1.6;
+  text-align: justify;
+  font-size: 0.95rem;
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 0.5rem;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.55rem 1rem;
+  background: var(--color-primary);
+  color: var(--color-text);
+  border-radius: var(--radius-sm);
+  font-weight: 600;
+  font-size: 0.95rem;
+  border: 1px solid var(--color-primary);
+  transition:
+    background-color var(--motion-fast),
+    transform var(--motion-fast),
+    color var(--motion-fast);
+  min-height: 44px;
+}
+
+.btn:hover {
+  background: var(--color-primary-strong);
+  transform: translateY(-1px);
+  color: var(--color-text);
+}
+
+.btnGhost {
+  background: transparent;
+  color: var(--color-secondary);
+}
+
+.btnGhost:hover {
+  background: var(--color-primary);
+  color: var(--color-text);
+  border-color: var(--color-primary);
+}

@@ -1,0 +1,147 @@
+.section {
+  padding: 7rem 1.5rem 3rem;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.intro {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr;
+  gap: 3rem;
+  align-items: center;
+  padding: 1rem 0 2rem;
+}
+
+.introImg {
+  display: flex;
+  justify-content: center;
+}
+
+.image {
+  max-width: 100%;
+  height: auto;
+}
+
+.title {
+  font-size: clamp(1.5rem, 3vw, 2.1em);
+  margin: 0 0 1.5rem;
+  font-weight: 600;
+}
+
+.heading {
+  font-size: clamp(1.6rem, 3vw, 2.3rem);
+  text-align: center;
+  margin: 3rem 0 1rem;
+  font-weight: 600;
+}
+
+.accent {
+  color: var(--color-secondary);
+  font-weight: 700;
+}
+
+/* Quote card */
+.card {
+  background: var(--color-surface);
+  border: 1px solid var(--color-surface-2);
+  border-radius: var(--radius-lg);
+  padding: 1.5rem 1.75rem;
+  box-shadow: var(--shadow-sm);
+}
+
+.quote {
+  margin: 0;
+  text-align: justify;
+  line-height: 1.7;
+  color: var(--color-text);
+}
+
+.quote p {
+  margin: 0 0 1rem;
+}
+
+.activities {
+  text-align: left;
+  margin: 1rem 0;
+  display: grid;
+  gap: 0.6rem;
+}
+
+.activities li {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.5rem;
+  color: var(--color-text);
+}
+
+.activities svg {
+  color: var(--color-primary);
+  flex-shrink: 0;
+  margin-top: 0.25rem;
+}
+
+.quoteText {
+  color: var(--color-text-muted);
+  font-style: italic;
+  margin-top: 1rem !important;
+}
+
+.cite {
+  color: var(--color-muted);
+  text-align: right;
+  font-size: 0.95rem;
+}
+
+/* Icon grids (Tech / Tools) */
+.iconGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(110px, 1fr));
+  gap: 1rem;
+  padding: 1rem 0 2rem;
+}
+
+.iconCard {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 3.6rem;
+  padding: 1rem;
+  background: var(--color-surface);
+  border: 1px solid var(--color-surface-2);
+  border-radius: var(--radius-md);
+  color: var(--color-text);
+  transition:
+    transform var(--motion-fast),
+    border-color var(--motion-fast),
+    box-shadow var(--motion-fast),
+    color var(--motion-fast);
+  aspect-ratio: 1 / 1;
+}
+
+.iconCard:hover {
+  transform: translateY(-4px);
+  border-color: var(--color-primary);
+  box-shadow: var(--shadow-md);
+  color: var(--color-secondary);
+}
+
+/* GitHub calendar */
+.github {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2rem 0;
+}
+
+@media (max-width: 900px) {
+  .intro {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+  .iconCard {
+    font-size: 2.6rem;
+  }
+}

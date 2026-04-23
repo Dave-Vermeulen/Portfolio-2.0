@@ -1,0 +1,100 @@
+.sky {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(ellipse at bottom, #0e1530 0%, var(--color-bg) 70%);
+  overflow: hidden;
+  z-index: -1;
+  pointer-events: none;
+}
+
+.layer1,
+.layer2,
+.layer3 {
+  position: absolute;
+  inset: 0;
+  background-repeat: repeat;
+  will-change: transform;
+}
+
+/* Tiny, dense, fastest layer */
+.layer1 {
+  width: 1px;
+  height: 1px;
+  background: transparent;
+  box-shadow:
+    25vw 12vh #fff,
+    7vw 80vh #fff,
+    60vw 38vh #cdd5ff,
+    88vw 9vh #fff,
+    14vw 50vh #fff,
+    71vw 90vh #cdd5ff,
+    92vw 71vh #fff,
+    33vw 22vh #fff,
+    47vw 65vh #fff,
+    5vw 33vh #cdd5ff,
+    18vw 78vh #fff,
+    80vw 56vh #fff,
+    66vw 4vh #fff,
+    41vw 95vh #cdd5ff,
+    9vw 17vh #fff,
+    23vw 60vh #fff,
+    77vw 27vh #fff,
+    53vw 84vh #cdd5ff,
+    95vw 41vh #fff,
+    30vw 7vh #fff,
+    58vw 49vh #fff,
+    11vw 89vh #cdd5ff,
+    84vw 66vh #fff,
+    39vw 31vh #fff;
+  animation: drift 60s linear infinite;
+}
+
+/* Mid-size, medium speed */
+.layer2 {
+  width: 2px;
+  height: 2px;
+  background: transparent;
+  box-shadow:
+    13vw 24vh #c7d0ff,
+    67vw 73vh #fff,
+    31vw 11vh #fff,
+    82vw 47vh #c7d0ff,
+    49vw 92vh #fff,
+    4vw 64vh #fff,
+    75vw 19vh #c7d0ff,
+    21vw 81vh #fff,
+    93vw 35vh #fff,
+    56vw 6vh #c7d0ff,
+    38vw 58vh #fff,
+    8vw 96vh #fff;
+  animation: drift 110s linear infinite;
+}
+
+/* Large, slow, accent-tinted */
+.layer3 {
+  width: 3px;
+  height: 3px;
+  background: transparent;
+  box-shadow:
+    19vw 42vh var(--color-secondary),
+    70vw 13vh #fff,
+    36vw 86vh var(--color-secondary),
+    87vw 62vh #fff,
+    51vw 28vh #fff,
+    6vw 71vh var(--color-secondary),
+    62vw 53vh #fff,
+    28vw 16vh #fff;
+  animation: drift 180s linear infinite;
+  opacity: 0.85;
+}
+
+@keyframes drift {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(-100vh);
+  }
+}

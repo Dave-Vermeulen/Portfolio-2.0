@@ -1,0 +1,11 @@
+node_modules
+build
+dist
+.vercel
+package-lock.json
+*.pdf
+*.svg
+*.png
+*.jpg
+*.jpeg
+*.ico

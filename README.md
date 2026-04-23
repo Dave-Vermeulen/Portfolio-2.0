@@ -1,74 +1,97 @@
 <h2 align="center">
-  Portfolio Website - v2.0<br/>
-  <a href="https://dawudvermeulen.vercel.app/" target="_blank">DawudVermeulen</a>
+  Dawūd Vermeulen — Portfolio (v3.0)<br/>
+  <a href="https://dawudvermeulen.vercel.app/" target="_blank">dawudvermeulen.vercel.app</a>
 </h2>
 <div align="center">
   <img alt="Demo" src="./Images/readme-img1.png" />
 </div>
 
-<br/>
-
-<center>
-
-[![forthebadge](https://forthebadge.com/images/badges/built-with-love.svg)](https://forthebadge.com) &nbsp;
-[![forthebadge](https://forthebadge.com/images/badges/made-with-javascript.svg)](https://forthebadge.com) &nbsp;
-[![forthebadge](https://forthebadge.com/images/badges/open-source.svg)](https://forthebadge.com) &nbsp;
-
-</center>
-
-<h3 align="center">
-    🔹
-    <a href="https://github.com/Dave-Vermeulen/Portfolio/issues">Report Bug</a> &nbsp; &nbsp;
-    🔹
-    <a href="https://github.com/Dave-Vermeulen/Portfolio/issues">Request Feature</a>
-</h3>
-
 ## TL;DR
 
-You can fork this repo to modify and make changes of your own. Please give me proper credit by linking back to [Dave-Vermeulen](https://github.com/Dave-Vermeulen/Portfolio-2.0). Shukran!
+Personal portfolio of **Dawūd Vermeulen** — software tester & developer based in Cape Town, South Africa.
 
-## Built With
+## ✨ Features
 
-My personal portfolio <a href="https://dawudvermeulen.vercel.app/" target="_blank">dawudvermeulen.tech</a> which features some of my github projects as well as my resume and technical skills.<br/>
+- 🌌 Pure-CSS animated starfield (no canvas, no JS particles)
+- 📄 In-browser PDF resume viewer + download
+- 📱 Fully responsive (320px → 4K), hamburger nav on mobile
+- ♿ A11y-first: skip-to-content link, semantic landmarks, focus rings, WCAG AA contrast
+- 🚀 Vite-powered: fast dev server, tiny prod bundle
+- 🎨 CSS Modules + design tokens — change colors in one file
 
-This project was built using these technologies.
+## 🛠 Tech Stack
 
-- React.js
-- Node.js
-- Express.js
-- CSS3
-- VsCode
-- Vercel
+| Layer       | Tool                                |
+| ----------- | ----------------------------------- |
+| Framework   | React 18                            |
+| Build       | Vite 5                              |
+| Styling     | CSS Modules + CSS custom properties |
+| Routing     | react-router-dom v6                 |
+| PDF viewer  | react-pdf v9                        |
+| Icons       | react-icons v5                      |
+| Lint/Format | ESLint + Prettier                   |
+| Hosting     | Vercel                              |
 
-## Features
+## 🎨 Color Palette (Indigo / Lavender)
 
-**📖 Multi-Page Layout**
+| Role            | Hex       |
+| --------------- | --------- |
+| Body background | `#0A0F1A` |
+| Surface         | `#111827` |
+| Primary accent  | `#473bf0` |
+| Mid accent      | `#6665dd` |
+| Secondary       | `#9b9ece` |
+| Muted           | `#acadbc` |
+| Text primary    | `#F3F4F6` |
+| Text secondary  | `#9CA3AF` |
 
-**🎨 Styled with React-Bootstrap and Css with easy to customize colors**
+### How to change colors
 
-**📱 Fully Responsive**
+All colors are CSS custom properties defined in **one file**: `src/styles/tokens.css`. Edit the variables there and the entire site updates.
 
-## Getting Started
+## 📄 How to update the resume PDF
 
-Clone down this repository. You will need `node.js` and `git` installed globally on your machine.
+1. Replace the file at `/src/Assets/Dawūd_Vermeulen.pdf` with a new PDF (keep the filename).
+2. That's it — the viewer and both download buttons import from this path.
 
-## 🛠 Installation and Setup Instructions
+If you change the filename, update the import in `src/components/Resume/ResumeNew.jsx`.
 
-1. Installation: `npm install`
+## 🚀 Getting started
 
-2. In the project directory, you can run: `npm start`
+```bash
+npm install      # one-time install
+npm run dev      # local dev server at http://localhost:3000
+npm run build    # production build → /build
+npm run preview  # preview the production build
+npm run lint     # ESLint
+npm run format   # Prettier
+npm run images   # Re-convert PNGs in src/Assets/Projects/ → WebP
+```
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
-The page will reload if you make edits.
+## 📁 Project structure
 
-## Usage Instructions
+```text
+src/
+├── main.jsx                # Entry (createRoot)
+├── App.jsx                 # Root + router
+├── styles/
+│   ├── tokens.css          # Design tokens (colors, spacing, motion)
+│   └── global.css          # Resets, body, focus rings, scrollbar
+├── components/
+│   ├── Stars.{jsx,module.css}     # Pure-CSS starfield
+│   ├── Navbar.{jsx,module.css}
+│   ├── Footer.{jsx,module.css}
+│   ├── Preloader.{jsx,module.css}
+│   ├── ScrollToTop.jsx
+│   ├── Home/   (Home, Home2, Type) + Home.module.css
+│   ├── About/  (About, AboutCard, Github, Techstack, Toolstack) + About.module.css
+│   ├── Projects/ (Projects, ProjectCards) + Projects.module.css
+│   └── Resume/   (ResumeNew) + Resume.module.css
+└── Assets/                 # PDF, SVGs, project screenshots (WebP)
+```
 
-Open the project folder and Navigate to `/src/components/`. <br/>
-You will find all the components used and you can edit your information accordingly.
+## 📜 Credits & License
 
-### Show your support
+Originally bootstrapped from the MIT-licensed [soumyajit4419/Portfolio](https://github.com/soumyajit4419/Portfolio) template; the v3.0 codebase has been substantially rewritten (Vite migration, CSS Modules, design-token system, custom accessible navbar, pure-CSS starfield, lazy-loaded PDF route, full lint/format toolchain).
 
-Give a ⭐ if you like this website!
-
-<a href="https://www.buymeacoffee.com/dadv" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" alt="Buy Me A Coffee" height= "60px" width= "217px" ></a>
+Released under the [MIT License](./LICENSE).
