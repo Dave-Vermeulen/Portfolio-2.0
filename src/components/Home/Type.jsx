@@ -1,18 +1,13 @@
 import Typewriter from 'typewriter-effect';
 
 const STRINGS = [
-  'Developer',
-  'Entreprenerd',
-  'MERN Stack Developer',
-  'Open Source Contributor',
-  'Father',
-  'Husband',
-  'Servant of God Almighty',
-  'OOP is life',
-  'Learner',
-  'Teacher',
-  'Mentor',
-  'Freelancer',
+  'Full-Stack Developer',
+  'TypeScript · React · Next.js',
+  'Contract-first, MVC-minded',
+  'Zod schemas · Drizzle · Postgres',
+  'QA turned developer',
+  'Co-founder at GO2TECH Africa',
+  'Father, husband, Capetonian 🇿🇦',
 ];
 
 export default function Type() {

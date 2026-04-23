@@ -1,11 +1,19 @@
 import { ImPointRight } from 'react-icons/im';
 import styles from './About.module.css';
 
+const WINS = [
+  'Promoted from Software Tester to Developer at Tech Genius in 7 months',
+  'Built a Playwright E2E suite from zero to 60+ automated test cases',
+  'Co-founded GO2TECH Africa — WhatsApp-first automation for African SMEs',
+  'Run a free daily coding programme for ages 6–25 at The Open Mosque, Wynberg',
+];
+
 const ACTIVITIES = [
-  'Playing with my daughter',
-  'Trail running solo in the mountains',
-  'Connecting with Allah SWT',
-  'The beach — laying in the sun, a good read, and dips in the ocean',
+  'Raising a tiny human with my wife',
+  'Trail running solo in the Cape mountains',
+  'Keeping my connection with Allah ﷻ',
+  'The beach — sun, a good book, dips in the Atlantic',
+  'Writing on Normally 🍋 about Clojure, ADHD and faith',
 ];
 
 export default function AboutCard() {
@@ -13,16 +21,34 @@ export default function AboutCard() {
     <article className={styles.card}>
       <blockquote className={styles.quote}>
         <p>
-          Hi everyone, I am <span className={styles.accent}>Dawūd Vermeulen</span> from{' '}
-          <span className={styles.accent}>Cape Town, South Africa.</span>
-          <br />
-          I am currently employed as a developer at g0g0&apos;s X roads.
-          <br />I have pivoted my career from IT Business Operations to Software Development. The
-          journey of self-taught development has been a long and rewarding one. With a thirst for
-          learning and solving problems I am always looking to get my hands dirty.
+          Hi, I&apos;m <span className={styles.accent}>Dawūd Vermeulen</span> — a full-stack
+          developer based in <span className={styles.accent}>Cape Town, South Africa</span>. I came
+          up through QA, IT support and operations before pivoting into dev full-time.
         </p>
-        <p>Apart from coding, some other activities that I love to do!</p>
+        <p>
+          I ship on a production{' '}
+          <span className={styles.accent}>TypeScript · Next.js · tRPC · CouchDB</span> stack at Tech
+          Genius, write Zod input schemas, and maintain the Playwright E2E suite I built during my
+          QA days. Personal projects lean into{' '}
+          <span className={styles.accent}>TS + Postgres + Drizzle + Zod + React</span> — I like my
+          compile-time errors loud and my runtime surprises quiet.
+        </p>
+        <p>
+          Philosophy: <span className={styles.accent}>MVC with a contract-first paradigm</span>. The
+          schema (Zod, Drizzle) is the source of truth; types fall out of it; the compiler tells me
+          when I break the contract. Simple, boring, reliable.
+        </p>
 
+        <p className={styles.quoteText}>Recent wins:</p>
+        <ul className={styles.activities}>
+          {WINS.map((w) => (
+            <li key={w}>
+              <ImPointRight aria-hidden="true" /> {w}
+            </li>
+          ))}
+        </ul>
+
+        <p>Apart from code, some things I love:</p>
         <ul className={styles.activities}>
           {ACTIVITIES.map((a) => (
             <li key={a}>

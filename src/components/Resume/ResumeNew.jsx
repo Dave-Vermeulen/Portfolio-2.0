@@ -6,7 +6,8 @@ import 'react-pdf/dist/Page/TextLayer.css';
 import pdf from '../../Assets/Dawūd_Vermeulen.pdf';
 import styles from './Resume.module.css';
 
-pdfjs.GlobalWorkerOptions.workerSrc = `https://cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.min.mjs`;
+// Self-hosted worker — set up by `npm run generate:worker` (runs on postinstall).
+pdfjs.GlobalWorkerOptions.workerSrc = '/pdf.worker.min.mjs';
 
 function DownloadButton() {
   return (

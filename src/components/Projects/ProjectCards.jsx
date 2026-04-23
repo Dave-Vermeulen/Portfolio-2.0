@@ -7,11 +7,12 @@ import styles from './Projects.module.css';
  *   img: string,
  *   title: string,
  *   description: string,
+ *   tags?: string[],
  *   ghLink?: string,
  *   demoLink?: string,
  * }} props
  */
-export default function ProjectCards({ img, title, description, ghLink, demoLink }) {
+export default function ProjectCards({ img, title, description, tags = [], ghLink, demoLink }) {
   return (
     <article className={styles.card}>
       <img
@@ -24,6 +25,15 @@ export default function ProjectCards({ img, title, description, ghLink, demoLink
       />
       <div className={styles.cardBody}>
         <h3 className={styles.cardTitle}>{title}</h3>
+        {tags.length > 0 && (
+          <ul className={styles.tags} aria-label="Technologies">
+            {tags.map((tag) => (
+              <li key={tag} className={styles.tag}>
+                {tag}
+              </li>
+            ))}
+          </ul>
+        )}
         <p className={styles.cardText}>{description}</p>
         <div className={styles.actions}>
           {ghLink && (

@@ -5,34 +5,60 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
     <meta name="theme-color" content="#0A0F1A" />
     <link rel="icon" type="image/png" href="/favicon.png" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
     <link rel="manifest" href="/manifest.json" />
     <link rel="canonical" href="https://dawudvermeulen.vercel.app/" />
+    <link rel="sitemap" type="application/xml" href="/sitemap.xml" />
     <meta name="author" content="Dawūd Vermeulen" />
 
-    <title>Dawūd Vermeulen — Full Stack Developer Portfolio</title>
+    <title>Dawūd Vermeulen — IT generalist turned software developer</title>
     <meta
       name="description"
-      content="Portfolio of Dawūd Vermeulen — Full Stack Developer based in Cape Town, South Africa. React, Node.js, Python, and the open web."
+      content="Portfolio of Dawūd Vermeulen — Full-Stack Developer in Cape Town. TypeScript, React, Next.js, tRPC, Zod. Promoted from QA to Dev at Tech Genius in 7 months. Co-founder of GO2TECH Africa."
     />
 
     <!-- Open Graph -->
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://dawudvermeulen.vercel.app/" />
-    <meta property="og:title" content="Dawūd Vermeulen — Full Stack Developer" />
+    <meta property="og:title" content="Dawūd Vermeulen — IT generalist turned software developer" />
     <meta
       property="og:description"
-      content="Portfolio of Dawūd Vermeulen — Full Stack Developer based in Cape Town, South Africa."
+      content="TypeScript · Next.js · tRPC · React · Postgres. Full-stack developer in Cape Town."
     />
     <meta property="og:image" content="https://dawudvermeulen.vercel.app/og-image.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:locale" content="en_ZA" />
 
     <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="Dawūd Vermeulen — Full Stack Developer" />
+    <meta
+      name="twitter:title"
+      content="Dawūd Vermeulen — IT generalist turned software developer"
+    />
     <meta
       name="twitter:description"
-      content="Portfolio of Dawūd Vermeulen — Full Stack Developer based in Cape Town, South Africa."
+      content="TypeScript · Next.js · tRPC · React · Postgres. Full-stack developer in Cape Town."
     />
     <meta name="twitter:image" content="https://dawudvermeulen.vercel.app/og-image.png" />
+    <meta name="twitter:site" content="@davevermeul9" />
+    <meta name="twitter:creator" content="@davevermeul9" />
+
+    <!-- Theme init (before paint, prevents FOUC) -->
+    <script>
+      (function () {
+        try {
+          var stored = localStorage.getItem('dv-theme');
+          var prefersLight =
+            window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches;
+          var theme =
+            stored === 'light' || stored === 'dark' ? stored : prefersLight ? 'light' : 'dark';
+          document.documentElement.dataset.theme = theme;
+        } catch (_) {
+          document.documentElement.dataset.theme = 'dark';
+        }
+      })();
+    </script>
 
     <!-- Preconnect for Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -56,13 +82,94 @@
         "@context": "https://schema.org",
         "@type": "Person",
         "name": "Dawūd Vermeulen",
-        "jobTitle": "Full Stack Developer",
+        "alternateName": "Dave Vermeulen",
+        "jobTitle": "Junior Software Developer",
+        "description": "Full-stack developer in Cape Town working on a production TypeScript Next.js application at Tech Genius. Promoted from Software Tester after 7 months. Co-founder of GO2TECH Africa.",
         "url": "https://dawudvermeulen.vercel.app/",
+        "image": "https://dawudvermeulen.vercel.app/og-image.png",
+        "identifier": "https://orcid.org/0009-0009-4602-3543",
+        "email": "vermeulend002@gmail.com",
+        "telephone": "+27606169909",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Cape Town",
+          "addressCountry": "ZA"
+        },
+        "knowsLanguage": ["English", "Afrikaans", "Arabic"],
+        "knowsAbout": [
+          "TypeScript",
+          "React",
+          "Next.js",
+          "tRPC",
+          "Zod",
+          "Node.js",
+          "PostgreSQL",
+          "Drizzle ORM",
+          "CouchDB",
+          "MUI",
+          "Turborepo",
+          "Docker",
+          "Playwright",
+          "Jest",
+          "Quality Assurance",
+          "Software Testing",
+          "AWS",
+          "Google Cloud Platform",
+          "Microsoft Azure"
+        ],
+        "worksFor": {
+          "@type": "Organization",
+          "name": "Tech Genius",
+          "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Brackenfell",
+            "addressCountry": "ZA"
+          }
+        },
+        "hasOccupation": {
+          "@type": "Occupation",
+          "name": "Junior Software Developer",
+          "occupationLocation": {
+            "@type": "City",
+            "name": "Cape Town"
+          },
+          "skills": "TypeScript, Next.js, tRPC, React, Zod, CouchDB, Playwright, QA, MVC, contract-first"
+        },
+        "alumniOf": [
+          {
+            "@type": "EducationalOrganization",
+            "name": "Code Your Future",
+            "url": "https://codeyourfuture.io/"
+          },
+          {
+            "@type": "EducationalOrganization",
+            "name": "College of Cape Town"
+          }
+        ],
+        "memberOf": {
+          "@type": "Organization",
+          "name": "GO2TECH Africa",
+          "description": "WhatsApp-first business automation for African SMEs"
+        },
         "sameAs": [
           "https://github.com/Dave-Vermeulen",
           "https://www.linkedin.com/in/dawud-vermeulen-99a94170/",
-          "https://x.com/davevermeul9"
+          "https://x.com/davevermeul9",
+          "https://equalsto.me/",
+          "https://dawuds.place/",
+          "https://orcid.org/0009-0009-4602-3543"
         ]
+      }
+    </script>
+
+    <!-- Structured data: WebSite with SearchAction (helps Google Sitelinks Search Box) -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "name": "Dawūd Vermeulen — Portfolio",
+        "url": "https://dawudvermeulen.vercel.app/",
+        "author": { "@type": "Person", "name": "Dawūd Vermeulen" }
       }
     </script>
   </head>

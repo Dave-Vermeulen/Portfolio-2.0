@@ -103,6 +103,11 @@
   color: var(--color-text);
 }
 
+.themeToggleWrap {
+  display: inline-flex;
+  align-items: center;
+}
+
 /* Hamburger */
 .toggle {
   display: none;

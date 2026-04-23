@@ -4,10 +4,12 @@ import {
   AiFillStar,
   AiOutlineFundProjectionScreen,
   AiOutlineHome,
+  AiOutlineMail,
   AiOutlineUser,
 } from 'react-icons/ai';
 import { CgFileDocument, CgGitFork } from 'react-icons/cg';
 import logo from '../Assets/logo.webp';
+import ThemeToggle from './ThemeToggle.jsx';
 import styles from './Navbar.module.css';
 
 const NAV_ITEMS = [
@@ -15,6 +17,7 @@ const NAV_ITEMS = [
   { to: '/about', label: 'About', Icon: AiOutlineUser },
   { to: '/project', label: 'Projects', Icon: AiOutlineFundProjectionScreen },
   { to: '/resume', label: 'Resume', Icon: CgFileDocument },
+  { to: '/contact', label: 'Contact', Icon: AiOutlineMail },
 ];
 
 export default function Navbar() {
@@ -67,12 +70,16 @@ export default function Navbar() {
               </NavLink>
             </li>
           ))}
+          <li className={styles.themeToggleWrap}>
+            <ThemeToggle />
+          </li>
           <li>
             <a
               href="https://github.com/Dave-Vermeulen"
               target="_blank"
               rel="noopener noreferrer"
               className={styles.fork}
+              aria-label="GitHub profile"
             >
               <CgGitFork aria-hidden="true" /> <AiFillStar aria-hidden="true" />
             </a>

@@ -2,6 +2,8 @@ import laptopImg from '../../Assets/about.webp';
 import AboutCard from './AboutCard.jsx';
 import Github from './Github.jsx';
 import Techstack from './Techstack.jsx';
+import Timeline from './Timeline.jsx';
+import Testimonials from './Testimonials.jsx';
 import Toolstack from './Toolstack.jsx';
 import styles from './About.module.css';
 
@@ -28,6 +30,8 @@ export default function About() {
           </div>
         </div>
 
+        <Timeline />
+
         <h2 className={styles.heading}>
           Professional <strong className={styles.accent}>Skillset</strong>
         </h2>
@@ -37,6 +41,8 @@ export default function About() {
           <strong className={styles.accent}>Tools</strong> I use
         </h2>
         <Toolstack />
+
+        <Testimonials />
 
         <Github />
       </div>

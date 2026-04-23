@@ -24,27 +24,30 @@ export default function Home2() {
             ALLOW ME TO <span className={styles.accent}>INTRODUCE</span> MYSELF
           </h2>
           <p className={styles.aboutBody}>
-            I fell in love with problem solving at a young age, this coupled with a knack for
-            breaking things has set me up to be a builder. I am a passionate Full Stack Developer
-            eager to make a positive impact on the world.
+            Developer based in Cape Town with a background in{' '}
+            <b className={styles.accent}>QA, IT support and operations</b>. I joined{' '}
+            <b className={styles.accent}>Tech Genius</b> as a tester, built their automated testing
+            infrastructure from the ground up, and was promoted to developer{' '}
+            <b className={styles.accent}>seven months later</b>.
             <br />
-            <br />I am fluent in classics like{' '}
+            <br />I now work full-stack on a production{' '}
+            <b className={styles.accent}>TypeScript Next.js application</b> — backend tRPC routers,
+            CouchDB and PouchDB data layers, Zod input schemas, and React frontends with MUI and
+            React Hook Form. Turborepo monorepo, Docker builds, NextAuth role-based access.
+            <br />
+            <br />
+            Personal preference:{' '}
             <i>
-              <b className={styles.accent}>Java, JavaScript and Python.</b>
-            </i>
-            <br />
-            <br />
-            My field of interest is building innovative{' '}
-            <i>
-              <b className={styles.accent}>tech solutions and products</b>
+              <b className={styles.accent}>contract-first, MVC-minded</b>
             </i>{' '}
-            — a lover of user stories and following a progressive roadmap, picking the right tools
-            to <b className={styles.accent}>get the job done</b>.
+            — Zod schemas as the contract, Drizzle + Postgres underneath, TypeScript types derived
+            end-to-end. One source of truth; the compiler catches drift.
             <br />
             <br />
-            Whenever possible, I also apply my passion for developing products with{' '}
-            <b className={styles.accent}>Node.js</b> and modern JavaScript libraries and frameworks
-            like <b className={styles.accent}>React.js and Next.js</b>.
+            Outside work I co-founded <b className={styles.accent}>GO2TECH Africa</b>{' '}
+            (WhatsApp-first business automation for African SMEs) and run a{' '}
+            <b className={styles.accent}>free coding programme</b> for young people in Wynberg. Open
+            to mid-level roles — remote, hybrid, or on-site.
           </p>
         </div>
         <div className={styles.avatar}>

@@ -16,6 +16,9 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   scroll-behavior: smooth;
+  transition:
+    background-color var(--motion-base),
+    color var(--motion-base);
 }
 
 body {

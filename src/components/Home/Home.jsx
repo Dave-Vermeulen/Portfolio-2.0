@@ -1,6 +1,7 @@
 import homeLogo from '../../Assets/home-main.svg';
 import Type from './Type.jsx';
 import Home2 from './Home2.jsx';
+import BlogCard from './BlogCard.jsx';
 import styles from './Home.module.css';
 
 export default function Home() {
@@ -41,6 +42,7 @@ export default function Home() {
         </div>
       </section>
       <Home2 />
+      <BlogCard />
     </>
   );
 }
