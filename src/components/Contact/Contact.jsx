@@ -5,7 +5,7 @@ import {
   AiOutlinePhone,
   AiOutlineTwitter,
 } from 'react-icons/ai';
-import { FaLinkedinIn } from 'react-icons/fa';
+import { FaIdCard, FaLinkedinIn } from 'react-icons/fa';
 import { SiOrcid } from 'react-icons/si';
 import styles from './Contact.module.css';
 
@@ -27,6 +27,12 @@ const CHANNELS = [
     value: PHONE_DISPLAY,
     Icon: AiOutlinePhone,
     primary: true,
+  },
+  {
+    href: 'https://dawuds.place/',
+    label: 'Digital business card',
+    value: 'dawuds.place',
+    Icon: FaIdCard,
   },
   {
     href: 'https://www.linkedin.com/in/dawud-vermeulen-99a94170/',
@@ -70,7 +76,17 @@ export default function Contact() {
         <p className={styles.intro}>
           Open to mid-level developer roles at established companies — remote, hybrid, or on-site.
           Happy to chat about TypeScript, contract-first architecture, QA-to-dev pivots, or the
-          youth coding programme I run in Wynberg. Email and WhatsApp are fastest.
+          youth coding programme I run in Wynberg. Email and WhatsApp are fastest; every other link
+          lives at{' '}
+          <a
+            href="https://dawuds.place/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className={styles.accent}
+          >
+            dawuds.place
+          </a>
+          .
         </p>
 
         <div className={styles.channels}>

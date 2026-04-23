@@ -10,6 +10,13 @@
 
 # production
 /build
+/dist
+
+# vite
+/.vite
+
+# husky runtime (regenerated on npm install)
+/.husky/_
 
 # misc
 .DS_Store

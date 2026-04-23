@@ -1,7 +1,17 @@
+import { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import styles from './NotFound.module.css';
 
 export default function NotFound() {
+  // Tell crawlers not to index arbitrary 404 URLs.
+  useEffect(() => {
+    const meta = document.createElement('meta');
+    meta.name = 'robots';
+    meta.content = 'noindex, follow';
+    document.head.appendChild(meta);
+    return () => document.head.removeChild(meta);
+  }, []);
+
   return (
     <section className={styles.section}>
       <div className={styles.container}>

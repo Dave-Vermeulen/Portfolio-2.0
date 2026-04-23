@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="en-ZA">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
@@ -10,6 +10,9 @@
     <link rel="canonical" href="https://dawudvermeulen.vercel.app/" />
     <link rel="sitemap" type="application/xml" href="/sitemap.xml" />
     <meta name="author" content="Dawūd Vermeulen" />
+
+    <!-- Preload hero illustration (LCP candidate on /) -->
+    <link rel="preload" as="image" href="/favicon.png" fetchpriority="high" />
 
     <title>Dawūd Vermeulen — IT generalist turned software developer</title>
     <meta
@@ -60,21 +63,8 @@
       })();
     </script>
 
-    <!-- Preconnect for Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;600;700&display=swap"
-      media="print"
-      onload="this.media = 'all'"
-    />
-    <noscript>
-      <link
-        rel="stylesheet"
-        href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;600;700&display=swap"
-      />
-    </noscript>
+    <!-- Raleway is self-hosted via @fontsource/raleway (imported in main.jsx). -->
+    <!-- Benefits: no third-party DNS hop, stricter CSP possible, zero FOUT. -->
 
     <!-- Structured data: Person -->
     <script type="application/ld+json">

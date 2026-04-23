@@ -40,6 +40,23 @@
   min-height: 2em;
 }
 
+.typewriterLive {
+  display: inline-block;
+}
+
+.typewriterCursor {
+  display: inline-block;
+  margin-left: 2px;
+  animation: blink 1s steps(2) infinite;
+  color: var(--color-secondary);
+}
+
+@keyframes blink {
+  to {
+    opacity: 0;
+  }
+}
+
 .imageWrap {
   display: flex;
   justify-content: center;

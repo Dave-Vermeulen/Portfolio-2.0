@@ -1,11 +1,15 @@
+import { lazy, Suspense } from 'react';
 import laptopImg from '../../Assets/about.webp';
 import AboutCard from './AboutCard.jsx';
-import Github from './Github.jsx';
 import Techstack from './Techstack.jsx';
 import Timeline from './Timeline.jsx';
 import Testimonials from './Testimonials.jsx';
 import Toolstack from './Toolstack.jsx';
 import styles from './About.module.css';
+
+// GitHub calendar pulls in ~30 kB + a network fetch — lazy-load so the rest of
+// /about is cheap, and users who don't scroll never pay for it.
+const Github = lazy(() => import('./Github.jsx'));
 
 export default function About() {
   return (
@@ -44,7 +48,9 @@ export default function About() {
 
         <Testimonials />
 
-        <Github />
+        <Suspense fallback={null}>
+          <Github />
+        </Suspense>
       </div>
     </section>
   );

@@ -1,4 +1,5 @@
-import Typewriter from 'typewriter-effect';
+import { useTypewriter } from '../../hooks/useTypewriter.js';
+import styles from './Home.module.css';
 
 const STRINGS = [
   'Full-Stack Developer',
@@ -11,7 +12,13 @@ const STRINGS = [
 ];
 
 export default function Type() {
+  const text = useTypewriter(STRINGS);
   return (
-    <Typewriter options={{ strings: STRINGS, autoStart: true, loop: true, deleteSpeed: 50 }} />
+    <span aria-live="polite" className={styles.typewriterLive}>
+      {text}
+      <span className={styles.typewriterCursor} aria-hidden="true">
+        |
+      </span>
+    </span>
   );
 }

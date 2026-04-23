@@ -1,8 +1,9 @@
 import { AiFillGithub, AiFillInstagram, AiOutlineTwitter } from 'react-icons/ai';
-import { FaLinkedinIn } from 'react-icons/fa';
+import { FaIdCard, FaLinkedinIn } from 'react-icons/fa';
 import styles from './Footer.module.css';
 
 const SOCIALS = [
+  { href: 'https://dawuds.place/', label: 'Digital business card', Icon: FaIdCard },
   { href: 'https://github.com/Dave-Vermeulen', label: 'GitHub', Icon: AiFillGithub },
   { href: 'https://x.com/davevermeul9', label: 'X (Twitter)', Icon: AiOutlineTwitter },
   {
