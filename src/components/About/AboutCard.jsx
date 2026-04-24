@@ -9,7 +9,7 @@ const WINS = [
 ];
 
 const ACTIVITIES = [
-  'Raising a tiny human with my wife',
+  'Raising my daughter',
   'Trail running solo in the Cape mountains',
   'Keeping my connection with Allah ﷻ',
   'The beach — sun, a good book, dips in the Atlantic',

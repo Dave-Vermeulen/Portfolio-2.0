@@ -16,7 +16,7 @@ function getInitialTheme() {
   return 'dark';
 }
 
-export function applyTheme(theme) {
+function applyTheme(theme) {
   document.documentElement.dataset.theme = theme;
 }
 

@@ -1,7 +1,7 @@
-import Tilt from 'react-parallax-tilt';
 import { AiFillGithub, AiFillInstagram, AiOutlineTwitter } from 'react-icons/ai';
 import { FaLinkedinIn } from 'react-icons/fa';
 import myImg from '../../Assets/avatar.svg';
+import { useMouseTilt } from '../../hooks/useMouseTilt.js';
 import styles from './Home.module.css';
 
 const SOCIALS = [
@@ -16,6 +16,7 @@ const SOCIALS = [
 ];
 
 export default function Home2() {
+  const tiltRef = useMouseTilt({ maxDeg: 18, smoothness: 0.08 });
   return (
     <section className={styles.about} id="about">
       <div className={styles.aboutGrid}>
@@ -24,7 +25,7 @@ export default function Home2() {
             ALLOW ME TO <span className={styles.accent}>INTRODUCE</span> MYSELF
           </h2>
           <p className={styles.aboutBody}>
-            Developer based in Cape Town with a background in{' '}
+            I&apos;m a full-stack developer in Cape Town with a background in{' '}
             <b className={styles.accent}>QA, IT support and operations</b>. I joined{' '}
             <b className={styles.accent}>Tech Genius</b> as a tester, built their automated testing
             infrastructure from the ground up, and was promoted to developer{' '}
@@ -51,15 +52,16 @@ export default function Home2() {
           </p>
         </div>
         <div className={styles.avatar}>
-          <Tilt tiltMaxAngleX={10} tiltMaxAngleY={10} glareEnable={false}>
-            <img
-              src={myImg}
-              alt="Avatar of Dawūd Vermeulen in a royal blue hoodie"
-              width="350"
-              height="350"
-              className={styles.avatarImg}
-            />
-          </Tilt>
+          <img
+            ref={tiltRef}
+            src={myImg}
+            alt="Stylised portrait of Dawūd Vermeulen in a royal blue hoodie"
+            width="350"
+            height="350"
+            decoding="async"
+            loading="lazy"
+            className={styles.avatarImg}
+          />
         </div>
       </div>
 

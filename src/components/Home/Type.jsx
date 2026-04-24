@@ -8,7 +8,7 @@ const STRINGS = [
   'Zod schemas · Drizzle · Postgres',
   'QA turned developer',
   'Co-founder at GO2TECH Africa',
-  'Father, husband, Capetonian 🇿🇦',
+  'Single dad, Capetonian 🇿🇦',
 ];
 
 export default function Type() {

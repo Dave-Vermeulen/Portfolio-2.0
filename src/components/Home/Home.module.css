@@ -137,6 +137,17 @@
 .avatarImg {
   max-width: 100%;
   height: auto;
+  will-change: transform;
+  /* useMouseTilt writes to .style.transform directly — no CSS transition
+     because the hook lerps its own smoothing. */
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .avatarImg {
+    /* Tilt hook already bails on reduced motion; kill transitions too. */
+    transform: none !important;
+    transition: none !important;
+  }
 }
 
 .findMe {

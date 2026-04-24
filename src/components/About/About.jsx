@@ -1,5 +1,5 @@
 import { lazy, Suspense } from 'react';
-import laptopImg from '../../Assets/about.webp';
+import aboutAvatar from '../../Assets/about.webp';
 import AboutCard from './AboutCard.jsx';
 import Techstack from './Techstack.jsx';
 import Timeline from './Timeline.jsx';
@@ -24,9 +24,10 @@ export default function About() {
           </div>
           <div className={styles.introImg}>
             <img
-              src={laptopImg}
-              alt="Illustration of a laptop"
+              src={aboutAvatar}
+              alt="Illustration of a laptop with a glowing screen"
               loading="lazy"
+              decoding="async"
               width="500"
               height="345"
               className={styles.image}

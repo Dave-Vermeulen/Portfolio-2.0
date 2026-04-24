@@ -37,8 +37,11 @@ export default function ResumeNew() {
   }, []);
 
   return (
-    <section className={styles.section}>
+    <section className={styles.section} aria-labelledby="resume-heading">
       <div className={styles.container}>
+        <h1 id="resume-heading" className={styles.srOnly}>
+          Resume — Dawūd Vermeulen
+        </h1>
         <div className={styles.actions}>
           <DownloadButton />
         </div>

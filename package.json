@@ -16,12 +16,16 @@
     "start": "vite",
     "build": "vite build",
     "preview": "vite preview",
+    "clean": "rm -rf build node_modules/.vite",
     "lint": "eslint . --ext .js,.jsx --report-unused-disable-directives --max-warnings 0",
     "format": "prettier --write .",
     "images": "node scripts/convert-images.mjs",
     "generate:og": "node scripts/generate-og.mjs",
     "generate:icons": "node scripts/generate-icons.mjs",
     "generate:worker": "node scripts/copy-pdf-worker.mjs",
+    "avatar": "node scripts/generate-avatar.mjs",
+    "tint:skin": "node scripts/tint-skin.mjs",
+    "shift:mouth": "node scripts/shift-mouth.mjs",
     "prepare": "husky"
   },
   "dependencies": {
@@ -32,7 +36,6 @@
     "react-dom": "^18.3.1",
     "react-github-calendar": "^4.5.1",
     "react-icons": "^5.3.0",
-    "react-parallax-tilt": "^1.7.260",
     "react-pdf": "^9.1.0",
     "react-router-dom": "^6.26.2"
   },

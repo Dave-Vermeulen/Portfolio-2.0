@@ -1,4 +1,4 @@
-import homeLogo from '../../Assets/home-main.svg';
+import heroAvatar from '../../Assets/home-main.svg';
 import Type from './Type.jsx';
 import Home2 from './Home2.jsx';
 import BlogCard from './BlogCard.jsx';
@@ -21,9 +21,9 @@ export default function Home() {
               <br />
               <span
                 role="img"
-                aria-label="surf, avocado, South Africa, prayer beads, mosque, family"
+                aria-label="surf, avocado, South Africa, prayer beads, mosque, dad and daughter"
               >
-                🌊🥑🇿🇦📿🕌👨‍👩‍👧
+                🌊🥑🇿🇦📿🕌👨‍👧
               </span>
             </h2>
             <div className={styles.typewriter}>
@@ -32,11 +32,13 @@ export default function Home() {
           </div>
           <div className={styles.imageWrap}>
             <img
-              src={homeLogo}
-              alt="Illustration of a developer at work"
+              src={heroAvatar}
+              alt="Illustration of a developer at a computer, deep in a coding session"
               width="450"
               height="450"
               className={styles.image}
+              fetchPriority="high"
+              decoding="async"
             />
           </div>
         </div>

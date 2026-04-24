@@ -3,7 +3,6 @@
  * Generate a 1200x630 Open Graph image as public/og-image.png.
  * Pure SVG → sharp → PNG so we don't need headless Chrome.
  */
-import { writeFile } from 'node:fs/promises';
 import sharp from 'sharp';
 
 const svg = `<?xml version="1.0" encoding="UTF-8"?>
@@ -48,6 +47,5 @@ const svg = `<?xml version="1.0" encoding="UTF-8"?>
   <text x="1120" y="590" font-family="Raleway, sans-serif" font-size="20" fill="#9ca3af" text-anchor="end">dawudvermeulen.vercel.app</text>
 </svg>`;
 
-await writeFile('public/og-image.svg', svg);
 await sharp(Buffer.from(svg)).png().toFile('public/og-image.png');
 console.log('✓ Generated public/og-image.png (1200x630)');
