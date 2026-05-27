@@ -4,7 +4,7 @@
 
 .header {
   display: flex;
-  align-items: baseline;
+  align-items: center;
   justify-content: space-between;
   flex-wrap: wrap;
   gap: 0.75rem;
@@ -114,6 +114,7 @@
   min-height: 640px;
 }
 
+/* Mobile Cal.com layout stacks month-view + time-grid vertically, needing more height than desktop. */
 @media (max-width: 640px) {
   .panel {
     min-height: 720px;

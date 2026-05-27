@@ -10,6 +10,7 @@ const MODES = [
 ];
 
 const CAL_NAMESPACE = 'booking';
+const PANEL_ID = 'bk-cal-panel';
 
 /**
  * Cal.com booking embed with a mode tab selector. Prefills name, email, and
@@ -74,7 +75,7 @@ export default function BookingEmbed({ formData, onBack }) {
               type="button"
               role="tab"
               aria-selected={active}
-              aria-controls="bk-cal-panel"
+              aria-controls={PANEL_ID}
               tabIndex={active ? 0 : -1}
               className={`${styles.tab} ${active ? styles.tabActive : ''}`}
               onClick={() => setMode(m.key)}
@@ -86,7 +87,7 @@ export default function BookingEmbed({ formData, onBack }) {
         })}
       </div>
 
-      <div id="bk-cal-panel" role="tabpanel" className={styles.panel}>
+      <div id={PANEL_ID} role="tabpanel" className={styles.panel}>
         <Cal
           key={mode}
           namespace={CAL_NAMESPACE}
