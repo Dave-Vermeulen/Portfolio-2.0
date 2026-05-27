@@ -49,6 +49,17 @@ export default function BookingEmbed({ formData, onBack }) {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
+  const handleTabKeyDown = (event) => {
+    if (event.key !== 'ArrowLeft' && event.key !== 'ArrowRight') return;
+    event.preventDefault();
+    const currentIndex = MODES.findIndex((m) => m.key === mode);
+    const delta = event.key === 'ArrowRight' ? 1 : -1;
+    const nextIndex = (currentIndex + delta + MODES.length) % MODES.length;
+    const nextKey = MODES[nextIndex].key;
+    setMode(nextKey);
+    tabRefs.current[nextKey]?.focus?.();
+  };
+
   const firstName = formData.name.trim().split(/\s+/)[0] || 'there';
   const fullName = `${formData.name.trim()} ${formData.surname.trim()}`.trim();
 
@@ -69,6 +80,7 @@ export default function BookingEmbed({ formData, onBack }) {
           return (
             <button
               key={m.key}
+              id={`bk-tab-${m.key}`}
               ref={(el) => {
                 tabRefs.current[m.key] = el;
               }}
@@ -79,6 +91,7 @@ export default function BookingEmbed({ formData, onBack }) {
               tabIndex={active ? 0 : -1}
               className={`${styles.tab} ${active ? styles.tabActive : ''}`}
               onClick={() => setMode(m.key)}
+              onKeyDown={handleTabKeyDown}
             >
               <span className={styles.tabLabel}>{m.label}</span>
               <span className={styles.tabSub}>{m.sub}</span>
@@ -87,12 +100,17 @@ export default function BookingEmbed({ formData, onBack }) {
         })}
       </div>
 
-      <div id={PANEL_ID} role="tabpanel" className={styles.panel}>
+      <div
+        id={PANEL_ID}
+        role="tabpanel"
+        aria-labelledby={`bk-tab-${mode}`}
+        className={styles.panel}
+      >
         <Cal
           key={mode}
           namespace={CAL_NAMESPACE}
           calLink={CAL_LINKS[mode]}
-          style={{ width: '100%', height: '100%', overflow: 'scroll' }}
+          style={{ width: '100%', height: '100%', overflow: 'auto' }}
           config={{
             name: fullName,
             email: formData.email.trim(),
