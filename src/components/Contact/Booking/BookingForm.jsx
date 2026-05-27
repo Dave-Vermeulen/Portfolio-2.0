@@ -32,6 +32,16 @@ function validate(values) {
   return errors;
 }
 
+/**
+ * Booking lead-capture form. Validates locally, posts to Formspree, and on
+ * success calls `onSubmit` with trimmed values so the parent can advance to
+ * the calendar embed step.
+ *
+ * @param {{
+ *   initialValues?: { name: string, surname: string, email: string, phone: string, occupation: string, reason: string },
+ *   onSubmit: (data: { name: string, surname: string, email: string, phone: string, occupation: string, reason: string }) => void,
+ * }} props
+ */
 export default function BookingForm({ initialValues, onSubmit }) {
   const [values, setValues] = useState(initialValues ?? EMPTY);
   const [errors, setErrors] = useState({});
@@ -39,6 +49,7 @@ export default function BookingForm({ initialValues, onSubmit }) {
   const [submitState, setSubmitState] = useState('idle');
   const [submitError, setSubmitError] = useState(null);
   const refs = useRef({});
+  const valuesRef = useRef(values);
 
   useEffect(() => {
     if (!FORMSPREE_ENDPOINT) {
@@ -49,12 +60,16 @@ export default function BookingForm({ initialValues, onSubmit }) {
   }, []);
 
   const setField = (name, value) => {
-    setValues((prev) => ({ ...prev, [name]: value }));
+    setValues((prev) => {
+      const next = { ...prev, [name]: value };
+      valuesRef.current = next;
+      return next;
+    });
   };
 
   const handleBlur = (name) => {
     setTouched((prev) => ({ ...prev, [name]: true }));
-    setErrors(validate(values));
+    setErrors(validate(valuesRef.current));
   };
 
   const handleSubmit = async (event) => {
@@ -63,6 +78,7 @@ export default function BookingForm({ initialValues, onSubmit }) {
     setErrors(nextErrors);
     setTouched(Object.fromEntries(Object.keys(values).map((k) => [k, true])));
 
+    // Object-key insertion order matches DOM field order; validate() must preserve this.
     const firstInvalid = Object.keys(nextErrors)[0];
     if (firstInvalid) {
       const target = refs.current[firstInvalid];
@@ -104,7 +120,6 @@ export default function BookingForm({ initialValues, onSubmit }) {
         throw new Error(`Submission failed (${response.status}). Please try again.`);
       }
 
-      setSubmitState('idle');
       onSubmit({
         ...values,
         name: values.name.trim(),
@@ -112,6 +127,7 @@ export default function BookingForm({ initialValues, onSubmit }) {
         email: values.email.trim(),
         reason: values.reason.trim(),
       });
+      setSubmitState('idle');
     } catch (err) {
       setSubmitState('error');
       setSubmitError(err.message || 'Something went wrong. Please try again.');
@@ -293,6 +309,7 @@ export default function BookingForm({ initialValues, onSubmit }) {
           )}
         </div>
 
+        {/* Honeypot: stays empty; controlled input requires onChange even though we never update it. */}
         <input
           type="text"
           name="_gotcha"
