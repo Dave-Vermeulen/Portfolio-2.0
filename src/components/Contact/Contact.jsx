@@ -8,6 +8,7 @@ import {
 import { FaIdCard, FaLinkedinIn } from 'react-icons/fa';
 import { SiOrcid } from 'react-icons/si';
 import styles from './Contact.module.css';
+import Booking from './Booking/Booking.jsx';
 
 const EMAIL = 'vermeulend002@gmail.com';
 const PHONE_DISPLAY = '+27 60 616 9909';
@@ -110,6 +111,8 @@ export default function Contact() {
             </a>
           ))}
         </div>
+
+        <Booking />
 
         <p className={styles.availability}>
           📍 Cape Town, South Africa &nbsp;•&nbsp; 🕑 UTC+2 &nbsp;•&nbsp; 💼 Remote / hybrid /
