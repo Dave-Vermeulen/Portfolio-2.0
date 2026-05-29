@@ -1,8 +1,11 @@
 import { useEffect, useRef, useState } from 'react';
 import PhoneInput, { isPossiblePhoneNumber } from 'react-phone-number-input';
+import flags from 'react-phone-number-input/flags';
 import 'react-phone-number-input/style.css';
 import { EMAIL_RE, FORMSPREE_ENDPOINT, OCCUPATIONS } from './constants.js';
 import styles from './BookingForm.module.css';
+
+const isPlaceholderEndpoint = !FORMSPREE_ENDPOINT || FORMSPREE_ENDPOINT.includes('REPLACE_ME');
 
 const EMPTY = {
   name: '',
@@ -54,7 +57,11 @@ export default function BookingForm({ initialValues, onSubmit }) {
   useEffect(() => {
     if (!FORMSPREE_ENDPOINT) {
       console.warn(
-        '[Booking] VITE_FORMSPREE_ENDPOINT is not set. Form submissions will fail until it is configured in .env.local (locally) or in Vercel project env vars (production).'
+        '[Booking] VITE_FORMSPREE_ENDPOINT is not set. In dev, submissions skip the POST and advance straight to the calendar; in production they will surface an error.'
+      );
+    } else if (FORMSPREE_ENDPOINT.includes('REPLACE_ME')) {
+      console.info(
+        '[Booking] VITE_FORMSPREE_ENDPOINT is the REPLACE_ME placeholder. In dev, submissions skip the POST and advance straight to the calendar. Replace with a real Formspree URL to capture real leads.'
       );
     }
   }, []);
@@ -86,7 +93,22 @@ export default function BookingForm({ initialValues, onSubmit }) {
       return;
     }
 
-    if (!FORMSPREE_ENDPOINT) {
+    const trimmed = {
+      ...values,
+      name: values.name.trim(),
+      surname: values.surname.trim(),
+      email: values.email.trim(),
+      reason: values.reason.trim(),
+    };
+
+    if (isPlaceholderEndpoint) {
+      if (import.meta.env.DEV) {
+        console.info(
+          '[Booking] Skipping Formspree POST (placeholder endpoint) and advancing to the calendar for local testing.'
+        );
+        onSubmit(trimmed);
+        return;
+      }
       setSubmitState('error');
       setSubmitError(
         'The booking form is not configured. Please email vermeulend002@gmail.com directly.'
@@ -105,13 +127,8 @@ export default function BookingForm({ initialValues, onSubmit }) {
           Accept: 'application/json',
         },
         body: JSON.stringify({
-          name: values.name.trim(),
-          surname: values.surname.trim(),
-          email: values.email.trim(),
-          phone: values.phone,
-          occupation: values.occupation,
-          reason: values.reason.trim(),
-          _subject: `Portfolio booking enquiry — ${values.name.trim()} ${values.surname.trim()}`,
+          ...trimmed,
+          _subject: `Portfolio booking enquiry — ${trimmed.name} ${trimmed.surname}`,
           _gotcha: '',
         }),
       });
@@ -120,13 +137,7 @@ export default function BookingForm({ initialValues, onSubmit }) {
         throw new Error(`Submission failed (${response.status}). Please try again.`);
       }
 
-      onSubmit({
-        ...values,
-        name: values.name.trim(),
-        surname: values.surname.trim(),
-        email: values.email.trim(),
-        reason: values.reason.trim(),
-      });
+      onSubmit(trimmed);
       setSubmitState('idle');
     } catch (err) {
       setSubmitState('error');
@@ -230,6 +241,7 @@ export default function BookingForm({ initialValues, onSubmit }) {
           <PhoneInput
             international
             defaultCountry="ZA"
+            flags={flags}
             value={values.phone}
             onChange={(value) => setField('phone', value || '')}
             onBlur={() => handleBlur('phone')}
