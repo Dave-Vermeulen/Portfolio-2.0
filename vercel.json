@@ -9,7 +9,7 @@
       "headers": [
         {
           "key": "Content-Security-Policy",
-          "value": "default-src 'self'; img-src 'self' data: blob: https:; script-src 'self' 'unsafe-inline' https://va.vercel-scripts.com https://vitals.vercel-insights.com; style-src 'self' 'unsafe-inline'; font-src 'self' data:; connect-src 'self' https://api.github.com https://va.vercel-scripts.com https://vitals.vercel-insights.com; worker-src 'self' blob:; frame-ancestors 'none'; base-uri 'self'; form-action 'self'; object-src 'none'; upgrade-insecure-requests"
+          "value": "default-src 'self'; img-src 'self' data: blob: https:; script-src 'self' 'unsafe-inline' https://va.vercel-scripts.com https://vitals.vercel-insights.com https://app.cal.com https://embed.cal.com; style-src 'self' 'unsafe-inline'; font-src 'self' data:; connect-src 'self' https://api.github.com https://va.vercel-scripts.com https://vitals.vercel-insights.com https://app.cal.com https://embed.cal.com https://formspree.io; frame-src 'self' https://app.cal.com https://embed.cal.com; worker-src 'self' blob:; frame-ancestors 'none'; base-uri 'self'; form-action 'self'; object-src 'none'; upgrade-insecure-requests"
         },
         { "key": "X-Content-Type-Options", "value": "nosniff" },
         { "key": "X-Frame-Options", "value": "DENY" },
