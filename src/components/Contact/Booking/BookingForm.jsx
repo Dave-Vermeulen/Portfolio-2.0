@@ -242,15 +242,15 @@ export default function BookingForm({ initialValues, onSubmit }) {
             international
             defaultCountry="ZA"
             flags={flags}
-            value={values.phone}
-            onChange={(value) => setField('phone', value || '')}
+            value={values.phone || undefined}
+            onChange={(value) => setField('phone', value)}
             onBlur={() => handleBlur('phone')}
             className={`${styles.phone} ${phoneInvalid ? styles.phoneInvalid : ''}`}
+            inputRef={(el) => {
+              refs.current.phone = el;
+            }}
             numberInputProps={{
               id: 'bk-phone',
-              ref: (el) => {
-                refs.current.phone = el;
-              },
               'aria-invalid': phoneInvalid,
               'aria-describedby': phoneInvalid ? 'bk-phone-err' : undefined,
               'aria-required': 'true',
