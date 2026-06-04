@@ -1,6 +1,7 @@
 import { lazy, Suspense } from 'react';
 import aboutAvatar from '../../Assets/about.webp';
 import AboutCard from './AboutCard.jsx';
+import Credentials from './Credentials.jsx';
 import Techstack from './Techstack.jsx';
 import Timeline from './Timeline.jsx';
 import Testimonials from './Testimonials.jsx';
@@ -43,9 +44,14 @@ export default function About() {
         <Techstack />
 
         <h2 className={styles.heading}>
-          <strong className={styles.accent}>Tools</strong> I use
+          <strong className={styles.accent}>Tools</strong> of the trade
         </h2>
         <Toolstack />
+
+        <h2 className={styles.heading}>
+          <strong className={styles.accent}>Credentials</strong> &amp; Certifications
+        </h2>
+        <Credentials />
 
         <Testimonials />
 
