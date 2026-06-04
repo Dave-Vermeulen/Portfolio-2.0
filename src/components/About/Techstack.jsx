@@ -21,7 +21,7 @@ import styles from './About.module.css';
 
 const TIERS = [
   {
-    label: 'Daily drivers at Tech Genius',
+    label: 'Daily drivers',
     items: [
       { Icon: SiTypescript, label: 'TypeScript' },
       { Icon: SiNextdotjs, label: 'Next.js' },
@@ -39,7 +39,7 @@ const TIERS = [
     ],
   },
   {
-    label: 'Personal stack (contract-first)',
+    label: 'Personal stack',
     items: [
       { Icon: SiTypescript, label: 'TypeScript' },
       { Icon: SiPostgresql, label: 'PostgreSQL' },
