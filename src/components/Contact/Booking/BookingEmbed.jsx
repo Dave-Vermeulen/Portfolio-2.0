@@ -1,0 +1,124 @@
+import { useEffect, useRef, useState } from 'react';
+import Cal, { getCalApi } from '@calcom/embed-react';
+import { useTheme } from '../../../hooks/useTheme.js';
+import { CAL_LINKS } from './constants.js';
+import styles from './BookingEmbed.module.css';
+
+const MODES = [
+  { key: 'coffee', label: '☕ Coffee chat', sub: '15 minutes' },
+  { key: 'gametime', label: '🎯 Game Time', sub: '30 or 60 minutes' },
+];
+
+const CAL_NAMESPACE = 'booking';
+const PANEL_ID = 'bk-cal-panel';
+
+/**
+ * Cal.com booking embed with a mode tab selector. Prefills name, email, and
+ * notes from the form step and re-themes when the parent toggles dark/light.
+ *
+ * @param {{
+ *   formData: { name: string, surname: string, email: string, phone: string, occupation: string, reason: string },
+ *   onBack: () => void,
+ * }} props
+ */
+export default function BookingEmbed({ formData, onBack }) {
+  const [mode, setMode] = useState('coffee');
+  const { theme } = useTheme();
+  const tabRefs = useRef({});
+
+  useEffect(() => {
+    let cancelled = false;
+    (async () => {
+      const cal = await getCalApi({ namespace: CAL_NAMESPACE });
+      if (cancelled) return;
+      cal('ui', {
+        theme,
+        styles: { branding: { brandColor: '#473bf0' } },
+        hideEventTypeDetails: false,
+        layout: 'month_view',
+      });
+    })();
+    return () => {
+      cancelled = true;
+    };
+  }, [theme]);
+
+  useEffect(() => {
+    tabRefs.current[mode]?.focus?.();
+    // Intentionally only on mount: focus the active tab once the embed appears.
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
+  const handleTabKeyDown = (event) => {
+    if (event.key !== 'ArrowLeft' && event.key !== 'ArrowRight') return;
+    event.preventDefault();
+    const currentIndex = MODES.findIndex((m) => m.key === mode);
+    const delta = event.key === 'ArrowRight' ? 1 : -1;
+    const nextIndex = (currentIndex + delta + MODES.length) % MODES.length;
+    const nextKey = MODES[nextIndex].key;
+    setMode(nextKey);
+    tabRefs.current[nextKey]?.focus?.();
+  };
+
+  const firstName = formData.name.trim().split(/\s+/)[0] || 'there';
+  const fullName = `${formData.name.trim()} ${formData.surname.trim()}`.trim();
+
+  return (
+    <div className={styles.embed}>
+      <div className={styles.header}>
+        <h3 className={styles.heading}>
+          Thanks, <span className={styles.accent}>{firstName}</span>. Pick a time.
+        </h3>
+        <button type="button" onClick={onBack} className={styles.back}>
+          ← Edit details
+        </button>
+      </div>
+
+      <div className={styles.tablist} role="tablist" aria-label="Meeting length">
+        {MODES.map((m) => {
+          const active = m.key === mode;
+          return (
+            <button
+              key={m.key}
+              id={`bk-tab-${m.key}`}
+              ref={(el) => {
+                tabRefs.current[m.key] = el;
+              }}
+              type="button"
+              role="tab"
+              aria-selected={active}
+              aria-controls={PANEL_ID}
+              tabIndex={active ? 0 : -1}
+              className={`${styles.tab} ${active ? styles.tabActive : ''}`}
+              onClick={() => setMode(m.key)}
+              onKeyDown={handleTabKeyDown}
+            >
+              <span className={styles.tabLabel}>{m.label}</span>
+              <span className={styles.tabSub}>{m.sub}</span>
+            </button>
+          );
+        })}
+      </div>
+
+      <div
+        id={PANEL_ID}
+        role="tabpanel"
+        aria-labelledby={`bk-tab-${mode}`}
+        className={styles.panel}
+      >
+        <Cal
+          key={mode}
+          namespace={CAL_NAMESPACE}
+          calLink={CAL_LINKS[mode]}
+          style={{ width: '100%', height: '100%', overflow: 'auto' }}
+          config={{
+            name: fullName,
+            email: formData.email.trim(),
+            notes: formData.reason?.trim() || '',
+            theme,
+          }}
+        />
+      </div>
+    </div>
+  );
+}
